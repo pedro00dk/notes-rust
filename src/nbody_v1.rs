@@ -201,3 +201,16 @@ pub unsafe fn advance(bodies: *mut Body) {
         }
     }
 }
+
+fn main() {
+    unsafe {
+        offset_momentun(solarBodies.as_mut_ptr());
+        output_energy(solarBodies.as_mut_ptr());
+        let c = std::env::args().nth(1).unwrap()  // Note 2
+            .parse().unwrap();
+        for _ in 0..c {
+            advance(solarBodies.as_mut_ptr())
+        }
+        output_energy(solarBodies.as_mut_ptr());
+    }
+}
