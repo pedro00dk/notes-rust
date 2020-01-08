@@ -8,6 +8,9 @@ build_v2:
 build_v3:
 	rustc -C opt-level=3 -C target-cpu=native -C codegen-units=1 ./src/nbody_v3.rs -o ./nbody.o
 
+build_v4:
+	rustc -C opt-level=3 -C target-cpu=native -C codegen-units=1 ./src/nbody_v4.rs -o ./nbody.o
+
 clean:
 	rm -f ./nbody.o
 
