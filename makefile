@@ -1,4 +1,7 @@
 # makefile to insert optimization flags directly in rustc (avoid cargo)
+build:
+	rustc -C opt-level=3 -C target-cpu=native -C codegen-units=1 ./src/nbody_idiom.rs -o ./nbody.o
+
 build_v1:
 	rustc -C opt-level=3 -C target-cpu=native -C codegen-units=1 ./src/nbody_v1.rs -o ./nbody.o
 
